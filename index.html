@@ -8,6 +8,7 @@
     <meta name="author" content="moghadam.pro">
     <title>dashboard</title>
     <link href="src/main.css" rel="stylesheet">
+    <script src="src/js/cardGen.js"></script>
 </head>
 
 <body id="page-top">
@@ -121,14 +122,19 @@
                 <div class="container-fluid">
 
                     <!-- Page Heading -->
-                    <div class="d-sm-flex  mb-4">
-                        <h3 class="h3 mb-0 text-gray-800">Dashboard</h3>
-                        <span class="badge bg-light text-dark">Light</span>
+                    <div class="d-sm-flex align-items-center justify-content-between mb-4">
+                        <div class="row">
+                            <h3 class="h3 mb-0 text-gray-800">Dashboard</h3>
+                            <span class="badge bg-light text-dark">Light</span>
+                        </div>
                         <a href="#" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm">Report</a>
                     </div>
 
                     <!-- Content Row -->
                     <div class="row" id="card_row">
+                        <script>
+                            document.write(c_generator('12','R34','C56','18','45','Manual'));
+                        </script>
                         <!-- Card template
                         <div class="col-xl-2 col-md-3 mb-4">
                             <div class="card border-left-primary shadow h-100">
@@ -218,11 +224,11 @@
 
     <!-- Custom scripts for all pages-->
     <script src="src/js/admin.min.js"></script>
-    <script src="src/js/cardGen.js"></script>
+    <!-- <script src="src/js/cardGen.js"></script> -->
     <script>
-        $(document).ready(function() {
-            document.getElementById("card_row").innerHTML = c_generator('12','R34','C56','18','45','Manual');
-        });
+        // $(document).ready(function() {
+        //     document.getElementById("card_row").innerHTML = c_generator('12','R34','C56','18','45','Manual');
+        // });
     </script>
 
 </body>
