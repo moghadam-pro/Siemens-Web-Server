@@ -1,17 +1,11 @@
-let c_id = "undefined";
-let c_row = "undefined";
-let c_col = "undefined";
-let c_angle = "0";
-let c_temp = "0";
-let c_mode = "Automatic";
-let c_mode1 = "Autopilot";
-let c_mode2 = "Wash East";
-let c_mode3 = "Wash West";
-let c_mode4 = "Storm";
+let angle = "0";
+let wind_velocity = "0";
+let motor_voltage = "0";
+const c_mode = ["Autopilot","West Wash","East Wash","Storm","Group Autopilot","Group West Wash","Group East Wash","Group Storm"];
 
-
-function c_generator(c_id,c_row,c_col,c_angle,c_temp,c_mode){
+function c_generator(angle,wind_velocity){
     let card_template = 
-    '<div class="col-xl-2 col-md-3 mb-4"> <div class="card border-left-primary shadow h-100"> <div class="card-header py-3"> <h6 class="m-0 font-weight-bold text-dark"> <span class="badge bg-primary text-white mr-1">&sharp;'+c_id+' </span> <span class="badge bg-gray-800 text-white mr-1">'+c_row+' </span> <span class="badge bg-gray-800 text-white mr-1">'+c_col+' </span> </h6> </div> <div class="card-body"> <div class="row no-gutters align-items-center"> <div class="col mr-2"> <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">Panel angel </div> <div class="h1 mb-0 font-weight-bold text-gray-800" id="counter">'+c_angle+' </div> </div> <div class="col mr-2"> <div class="text-xs font-weight-bold text-info text-uppercase mb-1">Temperature </div> <div class="h1 mb-0 font-weight-bold text-gray-800" id="counter">'+c_temp+'&#8451; </div> </div> </div> <div class="dropdown-divider"></div> <div class="small mb-1">Mode </div> <nav class="navbar navbar-expand navbar-light bg-light"> <a class="navbar-brand" href="#">'+c_mode+'</a> <ul class="navbar-nav ml-auto"> <li class="nav-item dropdown"> <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></a> <div class="dropdown-menu dropdown-menu-right animated--grow-in" aria-labelledby="navbarDropdown"> <a class="dropdown-item" href="#" onclick="postMode('+c_mode1+');">'+c_mode1+'</a> <a class="dropdown-item" href="#" onclick="postMode('+c_mode2+');">'+c_mode2+'</a> <a class="dropdown-item" href="#" onclick="postMode('+c_mode3+');">'+c_mode3+'</a> <a class="dropdown-item" href="#" onclick="postMode('+c_mode4+');">'+c_mode4+'</a> </div> </li> </ul> </nav> </div> </div></div>';
+    '<div class="col-xl-2 col-md-2 mb-4"> <div class="card border-left-primary shadow h-100"> <div class="card-body no-gutters"> <div class="" style="display:flex;flex-direction:row;align-items:flex-start;gap:18px;"> <div class="" style="display: flex;flex-direction: column;align-items: flex-start;gap:12px;"> <div class=""> <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">PANEL ANGEL</div> <div class="h5 mb-0 font-weight-bold text-gray-800">'+angle+'</div> </div> <div class=""> <div class="text-xs font-weight-bold text-info text-uppercase mb-1">WIND VELOCITY</div> <div class="h5 mb-0 font-weight-bold text-gray-800">'+wind_velocity+'</div> </div> <div class=""> <div class="text-xs font-weight-bold text-info text-uppercase mb-1">MOTOR VOLTAGE</div> <div class="h5 mb-0 font-weight-bold text-gray-800">'+motor_voltage+'</div> </div> </div> <div class="" style="display: flex;flex-direction: column;align-items: flex-end;"> <div class="btn-group"> <button class="btn btn-white btn-sm dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">A </button> <div class="dropdown-menu" aria-labelledby="dropdownMenuButton"> <a class="dropdown-item active" href="#">Autopilot</a> <a class="dropdown-item" href="#">West Wash</a> <a class="dropdown-item" href="#">East Wash</a> <a class="dropdown-item" href="#">Storm</a> </div> </div> </div> </div> </div> </div> </div>';
     return card_template;
 }
+

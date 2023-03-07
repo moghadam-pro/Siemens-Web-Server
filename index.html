@@ -6,9 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
     <meta name="author" content="moghadam.pro">
-    <title>dashboard</title>
+    <title>MEGS dashboard</title>
     <link href="src/main.css" rel="stylesheet">
-    <script src="src/js/cardGen.js"></script>
 </head>
 
 <body id="page-top">
@@ -27,65 +26,20 @@
                 <!-- Topbar -->
                 <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
 
-                    <!-- Sidebar Toggle (Topbar) -->
-                    <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
-                        <i class="fa fa-bars"></i>
-                    </button>
-
                     <a class="nav-link d-flex align-items-center justify-content-center" href="#">
                         <img class="img-profile rounded-circle" src="src/img/megs-logo.svg" width="32">
-                        <span class="mr-2 d-none d-lg-inline text-gray-600 medium ml-2">Mehryab Energy Gostar Sharif</span>
+                        <span class="mr-2 d-none d-lg-inline text-gray-600 medium ml-2">MEGS Dashboard</span>
                     </a>
 
                     <!-- Topbar Navbar -->
                     <ul class="navbar-nav ml-auto">
 
                         <!-- Nav Item -->
-                        <li class="nav-item">
+                        <!-- <li class="nav-item">
                             <a class="nav-link" href="#">
-                                <span class="mr-2 d-none d-lg-inline text-gray-600 small">Pages 01</span>
+                                <span class="mr-2 d-none d-lg-inline text-gray-600 small">Page</span>
                             </a>
-                        </li>
-                        <!-- Nav Item -->
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">
-                                <span class="mr-2 d-none d-lg-inline text-gray-600 small">Pages 02</span>
-                            </a>
-                        </li>
-                        <!-- Nav Item with notif-->
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">
-                                <span class="mr-2 d-none d-lg-inline text-gray-600 small">Notification</span>
-                                <span class="badge badge-danger badge-counter">3+</span>
-                            </a>
-                        </li>
-                        <li>
-                        
-                        </li>
-
-                        <!-- Nav Item - Search Dropdown (Visible Only XS) -->
-                        <li class="nav-item dropdown no-arrow d-sm-none">
-                            <a class="nav-link dropdown-toggle" href="#" id="searchDropdown" role="button"
-                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <i class="fas fa-search fa-fw"></i>
-                            </a>
-                            <!-- Dropdown - Messages -->
-                            <div class="dropdown-menu dropdown-menu-right p-3 shadow animated--grow-in"
-                                aria-labelledby="searchDropdown">
-                                <form class="form-inline mr-auto w-100 navbar-search">
-                                    <div class="input-group">
-                                        <input type="text" class="form-control bg-light border-0 small"
-                                            placeholder="Search for..." aria-label="Search"
-                                            aria-describedby="basic-addon2">
-                                        <div class="input-group-append">
-                                            <button class="btn btn-primary" type="button">
-                                                <i class="fas fa-search fa-sm"></i>
-                                            </button>
-                                        </div>
-                                    </div>
-                                </form>
-                            </div>
-                        </li>
+                        </li> -->
 
                         <div class="topbar-divider d-none d-sm-block"></div>
 
@@ -94,8 +48,6 @@
                             <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
                                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 <span class="mr-2 d-none d-lg-inline text-gray-600 small">Administrator</span>
-                                <img class="img-profile rounded-circle"
-                                    src="src/img/undraw_profile.svg">
                             </a>
                             <!-- Dropdown - User Information -->
                             <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
@@ -118,48 +70,310 @@
                 </nav>
                 <!-- End of Topbar -->
 
+
+
+
                 <!-- Begin Page Content -->
                 <div class="container-fluid">
 
-                    <!-- Page Heading -->
-                    <div class="d-sm-flex align-items-center justify-content-between mb-4">
-                        <div class="row">
-                            <h3 class="h3 mb-0 text-gray-800">Group 01</h3>
-                            <span class="badge bg-light text-dark">Alpha Row</span>
+                    <div class="card mb-4">
+                        <!-- Card Header - Accordion -->
+                        <a href="#netA1" class="d-flex card-header py-3" data-toggle="collapse" role="button" aria-expanded="true" aria-controls="collapseCardExample">
+                            <h6 class="m-0 font-weight-bold text-primary">Network Alfa #1</h6>
+                        </a>
+                        <!-- Card Content - Collapse -->
+                        <div class="collapse show" id="netA1">
+                            <div class="card-body d-flex flex-wrap" id="netA1_records">
+
+                            </div>
                         </div>
-                        <script>
-                            function ttt(e){
-                                console.log(e);
-                            }
-                        </script>
-                        <a href="#" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm">Report</a>
                     </div>
-                    <!-- Content Row -->
-                    <div class="row" id="card_row">
-                        <script>
-                            for (let i = 0; i < 4; i++) {
-                                document.write(c_generator(i+'12','R34'+i,'C56'+i,i,i,'Manual'));
-                            }
-                        </script>
-                    </div>
-                    <!-- Page Heading -->
-                    <div class="d-sm-flex align-items-center justify-content-between mb-4">
-                        <div class="row">
-                            <h3 class="h3 mb-0 text-gray-800">Group 02</h3>
-                            <span class="badge bg-light text-dark">Beta Row</span>
+
+                    <div class="card mb-4">
+                        <!-- Card Header - Accordion -->
+                        <a href="#netA2" class="d-flex card-header py-3" data-toggle="collapse" role="button" aria-expanded="true" aria-controls="collapseCardExample">
+                            <h6 class="m-0 font-weight-bold text-primary">Network Alfa #2</h6>
+                        </a>
+                        <!-- Card Content - Collapse -->
+                        <div class="collapse show" id="netA2">
+                            <div class="card-body d-flex flex-wrap" id="netA2_records">
+
+                                <div class="col-xl-2 col-md-3 mb-4">
+                                    <div class="card border-left-primary shadow h-100">
+                                      <div class="card-body no-gutters">
+                                        <div class="" style="display:flex;flex-direction:row;align-items:flex-start;gap:18px;">
+                                          <div class="" style="display: flex;flex-direction: column;align-items: flex-start;gap:12px;">
+                                            <div class="">
+                                                <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">PANEL ANGEL</div>
+                                                <div class="h5 mb-0 font-weight-bold text-gray-800">'+angle+'</div>
+                                            </div>
+                                            <div class="">
+                                                <div class="text-xs font-weight-bold text-info text-uppercase mb-1">WIND VELOCITY</div>
+                                                <div class="h5 mb-0 font-weight-bold text-gray-800">'+wind_velocity+'</div>
+                                            </div>
+                                            <div class="">
+                                                <div class="text-xs font-weight-bold text-info text-uppercase mb-1">MOTOR VOLTAGE</div>
+                                                <div class="h5 mb-0 font-weight-bold text-gray-800">'+motor_voltage+'</div>
+                                            </div>
+                                          </div>
+                                          <div class="" style="display: flex;flex-direction: column;align-items: flex-end;">
+                                            <div class="btn-group">
+                                                <button class="btn btn-white btn-sm dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">A                                                </button>
+                                                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                                    <a class="dropdown-item active" href="#">Autopilot</a>
+                                                    <a class="dropdown-item" href="#">West Wash</a>
+                                                    <a class="dropdown-item" href="#">East Wash</a>
+                                                    <a class="dropdown-item" href="#">Storm</a>
+                                                  </div>
+                                              </div>
+                                          </div>
+                                        </div>
+                                      </div>
+                                    </div>
+                                </div>
+                                <div class="col-xl-2 col-md-3 mb-4">
+                                    <div class="card border-left-primary shadow h-100">
+                                      <div class="card-body no-gutters">
+                                        <div class="" style="display:flex;flex-direction:row;align-items:flex-start;gap:18px;">
+                                          <div class="" style="display: flex;flex-direction: column;align-items: flex-start;gap:12px;">
+                                            <div class="">
+                                                <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">PANEL ANGEL</div>
+                                                <div class="h5 mb-0 font-weight-bold text-gray-800">'+angle+'</div>
+                                            </div>
+                                            <div class="">
+                                                <div class="text-xs font-weight-bold text-info text-uppercase mb-1">WIND VELOCITY</div>
+                                                <div class="h5 mb-0 font-weight-bold text-gray-800">'+wind_velocity+'</div>
+                                            </div>
+                                            <div class="">
+                                                <div class="text-xs font-weight-bold text-info text-uppercase mb-1">MOTOR VOLTAGE</div>
+                                                <div class="h5 mb-0 font-weight-bold text-gray-800">'+motor_voltage+'</div>
+                                            </div>
+                                          </div>
+                                          <div class="" style="display: flex;flex-direction: column;align-items: flex-end;">
+                                            <div class="btn-group">
+                                                <button class="btn btn-white btn-sm dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">A                                                </button>
+                                                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                                    <a class="dropdown-item active" href="#">Autopilot</a>
+                                                    <a class="dropdown-item" href="#">West Wash</a>
+                                                    <a class="dropdown-item" href="#">East Wash</a>
+                                                    <a class="dropdown-item" href="#">Storm</a>
+                                                  </div>
+                                              </div>
+                                          </div>
+                                        </div>
+                                      </div>
+                                    </div>
+                                </div>
+                                <div class="col-xl-2 col-md-3 mb-4">
+                                    <div class="card border-left-primary shadow h-100">
+                                      <div class="card-body no-gutters">
+                                        <div class="" style="display:flex;flex-direction:row;align-items:flex-start;gap:18px;">
+                                          <div class="" style="display: flex;flex-direction: column;align-items: flex-start;gap:12px;">
+                                            <div class="">
+                                                <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">PANEL ANGEL</div>
+                                                <div class="h5 mb-0 font-weight-bold text-gray-800">'+angle+'</div>
+                                            </div>
+                                            <div class="">
+                                                <div class="text-xs font-weight-bold text-info text-uppercase mb-1">WIND VELOCITY</div>
+                                                <div class="h5 mb-0 font-weight-bold text-gray-800">'+wind_velocity+'</div>
+                                            </div>
+                                            <div class="">
+                                                <div class="text-xs font-weight-bold text-info text-uppercase mb-1">MOTOR VOLTAGE</div>
+                                                <div class="h5 mb-0 font-weight-bold text-gray-800">'+motor_voltage+'</div>
+                                            </div>
+                                          </div>
+                                          <div class="" style="display: flex;flex-direction: column;align-items: flex-end;">
+                                            <div class="btn-group">
+                                                <button class="btn btn-white btn-sm dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">A                                                </button>
+                                                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                                    <a class="dropdown-item active" href="#">Autopilot</a>
+                                                    <a class="dropdown-item" href="#">West Wash</a>
+                                                    <a class="dropdown-item" href="#">East Wash</a>
+                                                    <a class="dropdown-item" href="#">Storm</a>
+                                                  </div>
+                                              </div>
+                                          </div>
+                                        </div>
+                                      </div>
+                                    </div>
+                                </div>
+                                <div class="col-xl-2 col-md-3 mb-4">
+                                    <div class="card border-left-primary shadow h-100">
+                                      <div class="card-body no-gutters">
+                                        <div class="" style="display:flex;flex-direction:row;align-items:flex-start;gap:18px;">
+                                          <div class="" style="display: flex;flex-direction: column;align-items: flex-start;gap:12px;">
+                                            <div class="">
+                                                <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">PANEL ANGEL</div>
+                                                <div class="h5 mb-0 font-weight-bold text-gray-800">'+angle+'</div>
+                                            </div>
+                                            <div class="">
+                                                <div class="text-xs font-weight-bold text-info text-uppercase mb-1">WIND VELOCITY</div>
+                                                <div class="h5 mb-0 font-weight-bold text-gray-800">'+wind_velocity+'</div>
+                                            </div>
+                                            <div class="">
+                                                <div class="text-xs font-weight-bold text-info text-uppercase mb-1">MOTOR VOLTAGE</div>
+                                                <div class="h5 mb-0 font-weight-bold text-gray-800">'+motor_voltage+'</div>
+                                            </div>
+                                          </div>
+                                          <div class="" style="display: flex;flex-direction: column;align-items: flex-end;">
+                                            <div class="btn-group">
+                                                <button class="btn btn-white btn-sm dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">A                                                </button>
+                                                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                                    <a class="dropdown-item active" href="#">Autopilot</a>
+                                                    <a class="dropdown-item" href="#">West Wash</a>
+                                                    <a class="dropdown-item" href="#">East Wash</a>
+                                                    <a class="dropdown-item" href="#">Storm</a>
+                                                  </div>
+                                              </div>
+                                          </div>
+                                        </div>
+                                      </div>
+                                    </div>
+                                </div>
+                                <div class="col-xl-2 col-md-3 mb-4">
+                                    <div class="card border-left-primary shadow h-100">
+                                      <div class="card-body no-gutters">
+                                        <div class="" style="display:flex;flex-direction:row;align-items:flex-start;gap:18px;">
+                                          <div class="" style="display: flex;flex-direction: column;align-items: flex-start;gap:12px;">
+                                            <div class="">
+                                                <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">PANEL ANGEL</div>
+                                                <div class="h5 mb-0 font-weight-bold text-gray-800">'+angle+'</div>
+                                            </div>
+                                            <div class="">
+                                                <div class="text-xs font-weight-bold text-info text-uppercase mb-1">WIND VELOCITY</div>
+                                                <div class="h5 mb-0 font-weight-bold text-gray-800">'+wind_velocity+'</div>
+                                            </div>
+                                            <div class="">
+                                                <div class="text-xs font-weight-bold text-info text-uppercase mb-1">MOTOR VOLTAGE</div>
+                                                <div class="h5 mb-0 font-weight-bold text-gray-800">'+motor_voltage+'</div>
+                                            </div>
+                                          </div>
+                                          <div class="" style="display: flex;flex-direction: column;align-items: flex-end;">
+                                            <div class="btn-group">
+                                                <button class="btn btn-white btn-sm dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">A                                                </button>
+                                                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                                    <a class="dropdown-item active" href="#">Autopilot</a>
+                                                    <a class="dropdown-item" href="#">West Wash</a>
+                                                    <a class="dropdown-item" href="#">East Wash</a>
+                                                    <a class="dropdown-item" href="#">Storm</a>
+                                                  </div>
+                                              </div>
+                                          </div>
+                                        </div>
+                                      </div>
+                                    </div>
+                                </div>
+                                <div class="col-xl-2 col-md-3 mb-4">
+                                    <div class="card border-left-primary shadow h-100">
+                                      <div class="card-body no-gutters">
+                                        <div class="" style="display:flex;flex-direction:row;align-items:flex-start;gap:18px;">
+                                          <div class="" style="display: flex;flex-direction: column;align-items: flex-start;gap:12px;">
+                                            <div class="">
+                                                <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">PANEL ANGEL</div>
+                                                <div class="h5 mb-0 font-weight-bold text-gray-800">'+angle+'</div>
+                                            </div>
+                                            <div class="">
+                                                <div class="text-xs font-weight-bold text-info text-uppercase mb-1">WIND VELOCITY</div>
+                                                <div class="h5 mb-0 font-weight-bold text-gray-800">'+wind_velocity+'</div>
+                                            </div>
+                                            <div class="">
+                                                <div class="text-xs font-weight-bold text-info text-uppercase mb-1">MOTOR VOLTAGE</div>
+                                                <div class="h5 mb-0 font-weight-bold text-gray-800">'+motor_voltage+'</div>
+                                            </div>
+                                          </div>
+                                          <div class="" style="display: flex;flex-direction: column;align-items: flex-end;">
+                                            <div class="btn-group">
+                                                <button class="btn btn-white btn-sm dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">A                                                </button>
+                                                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                                    <a class="dropdown-item active" href="#">Autopilot</a>
+                                                    <a class="dropdown-item" href="#">West Wash</a>
+                                                    <a class="dropdown-item" href="#">East Wash</a>
+                                                    <a class="dropdown-item" href="#">Storm</a>
+                                                  </div>
+                                              </div>
+                                          </div>
+                                        </div>
+                                      </div>
+                                    </div>
+                                </div>
+                                <div class="col-xl-2 col-md-3 mb-4">
+                                    <div class="card border-left-primary shadow h-100">
+                                      <div class="card-body no-gutters">
+                                        <div class="" style="display:flex;flex-direction:row;align-items:flex-start;gap:18px;">
+                                          <div class="" style="display: flex;flex-direction: column;align-items: flex-start;gap:12px;">
+                                            <div class="">
+                                                <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">PANEL ANGEL</div>
+                                                <div class="h5 mb-0 font-weight-bold text-gray-800">'+angle+'</div>
+                                            </div>
+                                            <div class="">
+                                                <div class="text-xs font-weight-bold text-info text-uppercase mb-1">WIND VELOCITY</div>
+                                                <div class="h5 mb-0 font-weight-bold text-gray-800">'+wind_velocity+'</div>
+                                            </div>
+                                            <div class="">
+                                                <div class="text-xs font-weight-bold text-info text-uppercase mb-1">MOTOR VOLTAGE</div>
+                                                <div class="h5 mb-0 font-weight-bold text-gray-800">'+motor_voltage+'</div>
+                                            </div>
+                                          </div>
+                                          <div class="" style="display: flex;flex-direction: column;align-items: flex-end;">
+                                            <div class="btn-group">
+                                                <button class="btn btn-white btn-sm dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">A                                                </button>
+                                                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                                    <a class="dropdown-item active" href="#">Autopilot</a>
+                                                    <a class="dropdown-item" href="#">West Wash</a>
+                                                    <a class="dropdown-item" href="#">East Wash</a>
+                                                    <a class="dropdown-item" href="#">Storm</a>
+                                                  </div>
+                                              </div>
+                                          </div>
+                                        </div>
+                                      </div>
+                                    </div>
+                                </div>
+                                <div class="col-xl-2 col-md-3 mb-4">
+                                    <div class="card border-left-primary shadow h-100">
+                                      <div class="card-body no-gutters">
+                                        <div class="" style="display:flex;flex-direction:row;align-items:flex-start;gap:18px;">
+                                          <div class="" style="display: flex;flex-direction: column;align-items: flex-start;gap:12px;">
+                                            <div class="">
+                                                <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">PANEL ANGEL</div>
+                                                <div class="h5 mb-0 font-weight-bold text-gray-800">'+angle+'</div>
+                                            </div>
+                                            <div class="">
+                                                <div class="text-xs font-weight-bold text-info text-uppercase mb-1">WIND VELOCITY</div>
+                                                <div class="h5 mb-0 font-weight-bold text-gray-800">'+wind_velocity+'</div>
+                                            </div>
+                                            <div class="">
+                                                <div class="text-xs font-weight-bold text-info text-uppercase mb-1">MOTOR VOLTAGE</div>
+                                                <div class="h5 mb-0 font-weight-bold text-gray-800">'+motor_voltage+'</div>
+                                            </div>
+                                          </div>
+                                          <div class="" style="display: flex;flex-direction: column;align-items: flex-end;">
+                                            <div class="btn-group">
+                                                <button class="btn btn-white btn-sm dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">A                                                </button>
+                                                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                                    <a class="dropdown-item active" href="#">Autopilot</a>
+                                                    <a class="dropdown-item" href="#">West Wash</a>
+                                                    <a class="dropdown-item" href="#">East Wash</a>
+                                                    <a class="dropdown-item" href="#">Storm</a>
+                                                  </div>
+                                              </div>
+                                          </div>
+                                        </div>
+                                      </div>
+                                    </div>
+                                </div>
+
+                            </div>
                         </div>
-                        <a href="#" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm">Report</a>
                     </div>
-                    <!-- Content Row -->
-                    <div class="row" id="card_row">
-                        <script>
-                            for (let i = 0; i < 6; i++) {
-                                document.write(c_generator('12','R34','C56','18','45','Manual'));
-                            }
-                        </script>
-                    </div>
+
                 </div>
-                <!-- /.container-fluid -->
+                
+                <!-- End of Page Content -->
+
+
+
+
 
             </div>
             <!-- End of Main Content -->
@@ -200,12 +414,35 @@
     <script src="src/jquery.easing.min.js"></script>
 
     <!-- Custom scripts for all pages-->
-    <script src="src/js/admin.min.js"></script>
-    <!-- <script src="src/js/cardGen.js"></script> -->
+    <script src="src/js/admin.js"></script>
+    <script src="src/js/cardGen.js"></script>
     <script>
-        // $(document).ready(function() {
-        //     document.getElementById("card_row").innerHTML = c_generator('12','R34','C56','18','45','Manual');
-        // });
+        function updateValue(xdata){
+            console.log(xdata.length);
+            $('#netA1_records').empty();
+            $.each( xdata, function( key, value ) {
+                console.log( key + ": " + value );
+                $('#netA1_records').append(c_generator(key, value));
+            });
+        }
+        $(document).ready(function () {
+            $.ajaxSetup({ cache: false });
+            setInterval(function () {
+                $.get("./IO.html", function (result) {
+                    try {
+                        const data = result.trim().split(/\r?\n/)
+                        updateValue(data);
+                    } catch (err) {
+                        console.error(err);
+                    }
+                });
+            }, 3000);
+            $('#mode').on('change', function () {
+            selected = this.value;
+            console.log(selected);
+        });
+        });
+        // npx lite-server
     </script>
 
 </body>
