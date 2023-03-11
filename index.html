@@ -9,6 +9,15 @@
     <title>MEGS dashboard</title>
     <link href="src/main.css" rel="stylesheet">
     <style>
+        body{
+            background-color: #e1e3e8;
+        }
+        .contentWrap{
+            padding: 24px;
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+        }
         .cardID{
             position: absolute;
             right: 0;
@@ -117,25 +126,20 @@
         }
         .cardBody{
             padding: 4px;
+            gap: 12px;
         }
     </style>
 </head>
 
 <body id="page-top">
-
     <!-- Page Wrapper -->
     <div id="wrapper">
-
-        
-
         <!-- Content Wrapper -->
-        <div id="content-wrapper" class="d-flex flex-column">
-
+        <div id="content-wrapper" class="d-flex flex-column" style="background-color: #e1e3e8;">
             <!-- Main Content -->
             <div id="content">
-
                 <!-- Topbar -->
-                <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
+                <nav class="navbar navbar-expand navbar-light bg-white topbar static-top">
 
                     <a class="nav-link d-flex align-items-center justify-content-center" href="#">
                         <img class="img-profile rounded-circle" src="src/img/megs-logo.svg" width="32">
@@ -144,38 +148,13 @@
 
                     <!-- Topbar Navbar -->
                     <ul class="navbar-nav ml-auto">
-
-                        <!-- Nav Item -->
-                        <!-- <li class="nav-item">
-                            <a class="nav-link" href="#">
-                                <span class="mr-2 d-none d-lg-inline text-gray-600 small">Page</span>
-                            </a>
-                        </li> -->
-
                         <div class="topbar-divider d-none d-sm-block"></div>
-
-                        <!-- Nav Item - User Information -->
-                        <li class="nav-item dropdown no-arrow">
-                            <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
-                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <span class="mr-2 d-none d-lg-inline text-gray-600 small">Administrator</span>
+                        <!-- Nav Item -->
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">
+                                <span class="mr-2 d-none d-lg-inline text-gray-600 small">Logout</span>
                             </a>
-                            <!-- Dropdown - User Information -->
-                            <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
-                                aria-labelledby="userDropdown">
-                                <a class="dropdown-item" href="#">
-                                    Settings
-                                </a>
-                                <a class="dropdown-item" href="#">
-                                    Activity Log
-                                </a>
-                                <div class="dropdown-divider"></div>
-                                <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">
-                                    Logout
-                                </a>
-                            </div>
                         </li>
-
                     </ul>
 
                 </nav>
@@ -185,83 +164,79 @@
 
 
                 <!-- Begin Page Content -->
-                <div class="container-fluid">
+                <div class="contentWrap">
 
-                    <div class="card mb-4">
+                    <div class="networkRow">
                         <!-- Card Header - Accordion -->
-                        <a href="#netA1" class="d-flex card-header py-3" data-toggle="collapse" role="button" aria-expanded="true" aria-controls="collapseCardExample">
-                            <h6 class="m-0 font-weight-bold text-primary">Network Alfa #1</h6>
-                        </a>
+                        <button class="accordionRow activeAcc" id="netA1">Network Alfa #1</button>
                         <!-- Card Content - Collapse -->
-                        <div class="collapse show" id="netA1">
-                            <div class="card-body d-flex flex-wrap" id="netA1_records">
-
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="card mb-4">
-                        <!-- Card Header - Accordion -->
-                        <a href="#netA2" class="d-flex card-header py-3" data-toggle="collapse" role="button" aria-expanded="true" aria-controls="collapseCardExample">
-                            <h6 class="m-0 font-weight-bold text-primary">Network Alfa #2</h6>
-                        </a>
-                        <!-- Card Content - Collapse -->
-                        <div class="collapse show" id="netA2">
-                            <div class="card-body d-flex flex-wrap" id="netA2_records">
-
-                                <div class="col-xl-2 col-md-3 mb-4">
-                                    
-                                    <div class="card border-left-primary shadow h-100">
-                                      <span class="cardID">A01B00</span>
-                                      <div class="card-body no-gutters">
-                                        <div class="" style="display:flex;flex-direction:row;align-items:flex-start;gap:18px;">
-                                          <div class="" style="display: flex;flex-direction: column;align-items: flex-start;gap:12px;">
-                                            <div class="">
-                                                <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">PANEL ANGEL</div>
-                                                <div class="h5 mb-0 font-weight-bold text-gray-800">45</div>
-                                            </div>
-                                            <div class="">
-                                                <div class="text-xs font-weight-bold text-info text-uppercase mb-1">WIND VELOCITY</div>
-                                                <div class="h5 mb-0 font-weight-bold text-gray-800">0</div>
-                                            </div>
-                                            <div class="">
-                                                <div class="text-xs font-weight-bold text-info text-uppercase mb-1">MOTOR VOLTAGE</div>
-                                                <div class="h5 mb-0 font-weight-bold text-gray-800">220</div>
-                                            </div>
-                                          </div>
-                                          <div class="" style="display: flex;flex-direction: column;align-items: flex-end;">
-                                            <div class="btn-group">
-                                                <button class="btn btn-white btn-sm dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">A                                                </button>
-                                                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                                    <a class="dropdown-item active" href="#">Autopilot</a>
-                                                    <a class="dropdown-item" href="#">West Wash</a>
-                                                    <a class="dropdown-item" href="#">East Wash</a>
-                                                    <a class="dropdown-item" href="#">Storm</a>
-                                                  </div>
-                                              </div>
-                                          </div>
-                                        </div>
-                                      </div>
-                                    </div>
-                                </div>
-
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="">
-                        <!-- Card Header - Accordion -->
-                        <button class="accordionRow activeAcc" id="netA3">Network Alfa #3</button>
-                        <!-- Card Content - Collapse -->
-                        <div class="panelAcc" id="netA3_records" style="display: block;"> 
+                        <div class="panelAcc" id="netA1_records" style="display: block;"> 
                             <div class="cardBody d-flex flex-wrap">                                
-                                <div class="cardBox">
-                                    <span class="cardID">A03B01</span>
+                                <div class="cardBox" id="A01B01">
+                                    <span class="cardID">A01B01</span>
                                     <span class="cardStatus cs_normal"></span>
                                     <div class="cardVal">
-                                        <span title="PANEL ANGEL">45</span>
-                                        <span title="WIND VELOCITY">0</span>
-                                        <span title="MOTOR VOLTAGE">220</span>
+                                        <span class="angle" title="PANEL ANGEL">45</span>
+                                        <span class="wind_velocity" title="WIND VELOCITY">0</span>
+                                        <span class="motor_voltage" title="MOTOR VOLTAGE">220</span>
+                                    </div>
+                                    <select class="cardSelect" name="mode" id="modeSelector">
+                                        <option value="0">Autopilot</option>
+                                        <option value="1">West Wash</option>
+                                        <option value="2">East Wash</option>
+                                        <option value="3">Storm</option>
+                                    </select>
+                                </div>
+
+                                <div class="cardBox" id="A01B02">
+                                    <span class="cardID">A01B02</span>
+                                    <span class="cardStatus cs_normal"></span>
+                                    <div class="cardVal">
+                                        <span class="angle" title="PANEL ANGEL">45</span>
+                                        <span class="wind_velocity" title="WIND VELOCITY">0</span>
+                                        <span class="motor_voltage" title="MOTOR VOLTAGE">220</span>
+                                    </div>
+                                    <select class="cardSelect" name="mode" id="modeSelector">
+                                        <option value="0">Autopilot</option>
+                                        <option value="1">West Wash</option>
+                                        <option value="2">East Wash</option>
+                                        <option value="3">Storm</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="networkRow">
+                        <!-- Card Header - Accordion -->
+                        <button class="accordionRow activeAcc" id="netA2">Network Alfa #2</button>
+                        <!-- Card Content - Collapse -->
+                        <div class="panelAcc" id="netA2_records" style="display: block;"> 
+                            <div class="cardBody d-flex flex-wrap">                                
+                                <div class="cardBox" id="A02B01">
+                                    <span class="cardID">A02B01</span>
+                                    <span class="cardStatus cs_normal"></span>
+                                    <div class="cardVal">
+                                        <span class="angle" title="PANEL ANGEL">45</span>
+                                        <span class="wind_velocity" title="WIND VELOCITY">0</span>
+                                        <span class="motor_voltage" title="MOTOR VOLTAGE">220</span>
+                                    </div>
+                                    <select class="cardSelect" name="mode" id="modeSelector">
+                                        <option value="0">Autopilot</option>
+                                        <option value="1">West Wash</option>
+                                        <option value="2">East Wash</option>
+                                        <option value="3">Storm</option>
+                                    </select>
+                                </div>
+
+                                <div class="cardBox" id="A02B02">
+                                    <span class="cardID">A02B02</span>
+                                    <span class="cardStatus cs_normal"></span>
+                                    <div class="cardVal">
+                                        <span class="angle" title="PANEL ANGEL">45</span>
+                                        <span class="wind_velocity" title="WIND VELOCITY">0</span>
+                                        <span class="motor_voltage" title="MOTOR VOLTAGE">220</span>
                                     </div>
                                     <select class="cardSelect" name="mode" id="modeSelector">
                                         <option value="0">Autopilot</option>
@@ -282,38 +257,12 @@
 
 
 
-
             </div>
             <!-- End of Main Content -->
-
-
         </div>
         <!-- End of Content Wrapper -->
-
     </div>
     <!-- End of Page Wrapper -->
-
-
-    <!-- Logout Modal-->
-    <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-        aria-hidden="true">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
-                    <button class="close" type="button" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">×</span>
-                    </button>
-                </div>
-                <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
-                <div class="modal-footer">
-                    <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-                    <a class="btn btn-primary" href="#">Logout</a>
-                </div>
-            </div>
-        </div>
-    </div>
-
     <!-- Bootstrap core JavaScript-->
     <script src="src/jquery.min.js"></script>
     <script src="src/bootstrap.bundle.min.js"></script>
@@ -327,10 +276,13 @@
     <script>
         function updateValue(xdata){
             console.log(xdata.length);
-            $('#netA1_records').empty();
+            // const obj = {};
+            // for (const key of yourArray) {
+            //     obj[key] = whatever;
+            // }
             $.each( xdata, function( key, value ) {
                 // console.log( key + ": " + value );
-                $('#netA1_records').append(c_generator(key, value));
+                // $('#netA1_records').append(c_generator(key, value));
             });
         }
         $(document).ready(function () {
@@ -338,13 +290,13 @@
             setInterval(function () {
                 $.get("./IO.html", function (result) {
                     try {
-                        const data = result.trim().split(/\r?\n/)
+                        const data = result.trim().split(/\r?\n/);
                         updateValue(data);
                     } catch (err) {
                         console.error(err);
                     }
                 });
-            }, 3000);
+            }, 1000);
         });
         // npx lite-server
     </script>
