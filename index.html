@@ -8,6 +8,12 @@
     <meta name="author" content="moghadam.pro">
     <title>MEGS dashboard</title>
     <link href="src/main.css" rel="stylesheet">
+    <script>
+        const alpha_count = {
+            alpha : [1,4],
+            beta : [1,18]
+        };
+    </script>
     <style>
         body{
             background-color: #e1e3e8;
@@ -180,7 +186,7 @@
                                         <span class="wind_velocity" title="WIND VELOCITY">0</span>
                                         <span class="motor_voltage" title="MOTOR VOLTAGE">220</span>
                                     </div>
-                                    <select class="cardSelect" name="mode" id="modeSelector">
+                                    <select class="cardSelect" name="mode">
                                         <option value="0">Autopilot</option>
                                         <option value="1">West Wash</option>
                                         <option value="2">East Wash</option>
@@ -196,7 +202,39 @@
                                         <span class="wind_velocity" title="WIND VELOCITY">0</span>
                                         <span class="motor_voltage" title="MOTOR VOLTAGE">220</span>
                                     </div>
-                                    <select class="cardSelect" name="mode" id="modeSelector">
+                                    <select class="cardSelect" name="mode">
+                                        <option value="0">Autopilot</option>
+                                        <option value="1">West Wash</option>
+                                        <option value="2">East Wash</option>
+                                        <option value="3">Storm</option>
+                                    </select>
+                                </div>
+
+                                <div class="cardBox" id="A01B03">
+                                    <span class="cardID">A01B03</span>
+                                    <span class="cardStatus cs_normal"></span>
+                                    <div class="cardVal">
+                                        <span class="angle" title="PANEL ANGEL">45</span>
+                                        <span class="wind_velocity" title="WIND VELOCITY">0</span>
+                                        <span class="motor_voltage" title="MOTOR VOLTAGE">220</span>
+                                    </div>
+                                    <select class="cardSelect" name="mode">
+                                        <option value="0">Autopilot</option>
+                                        <option value="1">West Wash</option>
+                                        <option value="2">East Wash</option>
+                                        <option value="3">Storm</option>
+                                    </select>
+                                </div>
+
+                                <div class="cardBox" id="A01B04">
+                                    <span class="cardID">A01B04</span>
+                                    <span class="cardStatus cs_normal"></span>
+                                    <div class="cardVal">
+                                        <span class="angle" title="PANEL ANGEL">15</span>
+                                        <span class="wind_velocity" title="WIND VELOCITY">0</span>
+                                        <span class="motor_voltage" title="MOTOR VOLTAGE">220</span>
+                                    </div>
+                                    <select class="cardSelect" name="mode">
                                         <option value="0">Autopilot</option>
                                         <option value="1">West Wash</option>
                                         <option value="2">East Wash</option>
@@ -222,7 +260,7 @@
                                         <span class="wind_velocity" title="WIND VELOCITY">0</span>
                                         <span class="motor_voltage" title="MOTOR VOLTAGE">220</span>
                                     </div>
-                                    <select class="cardSelect" name="mode" id="modeSelector">
+                                    <select class="cardSelect" name="mode">
                                         <option value="0">Autopilot</option>
                                         <option value="1">West Wash</option>
                                         <option value="2">East Wash</option>
@@ -238,7 +276,23 @@
                                         <span class="wind_velocity" title="WIND VELOCITY">0</span>
                                         <span class="motor_voltage" title="MOTOR VOLTAGE">220</span>
                                     </div>
-                                    <select class="cardSelect" name="mode" id="modeSelector">
+                                    <select class="cardSelect" name="mode">
+                                        <option value="0">Autopilot</option>
+                                        <option value="1">West Wash</option>
+                                        <option value="2">East Wash</option>
+                                        <option value="3">Storm</option>
+                                    </select>
+                                </div>
+
+                                <div class="cardBox" id="A02B03">
+                                    <span class="cardID">A02B03</span>
+                                    <span class="cardStatus cs_normal"></span>
+                                    <div class="cardVal">
+                                        <span class="angle" title="PANEL ANGEL">47</span>
+                                        <span class="wind_velocity" title="WIND VELOCITY">0</span>
+                                        <span class="motor_voltage" title="MOTOR VOLTAGE">220</span>
+                                    </div>
+                                    <select class="cardSelect" name="mode">
                                         <option value="0">Autopilot</option>
                                         <option value="1">West Wash</option>
                                         <option value="2">East Wash</option>
@@ -297,6 +351,15 @@
                     }
                 });
             }, 1000);
+            $('.cardSelect').on('change', function () {
+                selected = this.value;
+                console.log(selected);
+                url="./IOwrite.html";
+                name='"webdata".triangleWave';
+                // val=$('input[id=setvar]').val();
+                sdata=escape(name)+'='+selected;
+                $.post(url,sdata,function(result){});
+            });
         });
         // npx lite-server
     </script>
