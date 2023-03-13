@@ -216,25 +216,23 @@
     <script>
         function updateValue(xdata){
             // test object and convert array to object for better addresing in fill boxs
-            const inputCount = xdata.length;
-            console.log(inputCount);
-            const key = inputCount/4;
-            console.log(key);
-            const valObj = {}
-            for (key of xdata){
-                valObj[key] = {
-                    recordID: xdata[0],
-                    panelAngel: xdata[1],
-                    windVelocity: xdata[2],
-                    motorVoltag: xdata[3]
-                }
+            let valObj = {}
+            let counter = 0;
+            for (let key=0;key<xdata.length;key++){
+                valObj[counter] = {
+                    recordID: xdata[key],
+                    panelAngel: xdata[++key],
+                    windVelocity: xdata[++key],
+                    motorVoltag: xdata[++key]
+                };
+                counter++;
             }
             console.log(valObj);
 
-            $.each( xdata, function( key, value ) {
+            // $.each( xdata, function( key, value ) {
                 // console.log( key + ": " + value );
                 // $('#netA1_records').append(c_generator(key, value));
-            });
+            // });
         }
         $(document).ready(function () {
             $.ajaxSetup({ cache: false });
@@ -259,8 +257,6 @@
             });
         });
         // npx lite-server
-    </script>
-    <script>
         // script for accordion headers
         var acc = document.getElementsByClassName("accordionRow");
         var i;
@@ -275,7 +271,6 @@
                 }
             });
         }
-        
     </script>
 
 </body>
