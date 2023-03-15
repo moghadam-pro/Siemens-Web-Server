@@ -69,7 +69,7 @@ body{
     line-height: 1.5;
     color: #212529;
     background-color: #fff;
-    background-image: url(./img/arrow-down.svg);
+    background-image: url(./arrow-down.svg);
     background-repeat: no-repeat;
     background-position: right 0.75rem center;
     background-size: 16px 12px;
