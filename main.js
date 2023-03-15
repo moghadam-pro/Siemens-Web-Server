@@ -30,25 +30,31 @@ function createDT(data){
         alphas.add(records[key].alpha);
     }
     console.log(alphas);
-    $('.detectedAlpha').html(alphas.size);
-    console.log("alpha count: "+ alphas.size);
-    $('.detectedBeta').html(Object.keys(records).length);
-    console.log("beta count: "+ Object.keys(records).length);
+    $('#detectedAlpha').html(alphas.size);
+    // console.log("alpha count: "+ alphas.size);
+    $('#detectedBeta').html(Object.keys(records).length);
+    // console.log("beta count: "+ Object.keys(records).length);
 
-    console.log(records);
+    //console.log(records);
     createRecords(records,alphas);
 }
 // Generate Records
 function createRecords(records,alphas){
-    for (const key of alphas){
-        console.log(key);
-        $('.contentWrap').append(`
-        ${temp}${angel}
+    console.log(alphas[0].);
+    const alphas2 = alphas.values();
+    //console.log(alphas2);
+    for (const [key, value] of Object.entries(records)) {
+        //console.log(`${key}: ${value}`);
+    }
+    for (const key of alphas2){
+        //console.log(key);
+        //console.log(alphas2[key]);
+        $('#contentWrap').append(`
         <div class="networkRow">
             <!-- Card Header - Accordion -->
-            <button class="accordionRow activeAcc" id="netA2">Network Alfa #2</button>
+            <button class="accordionRow activeAcc" id="A${records[key].alpha}">Network Alpha #${records[key].alpha}</button>
             <!-- Card Content - Collapse -->
-            <div class="panelAcc" id="netA2_records" style="display: block;"> 
+            <div class="panelAcc" style="display: block;"> 
                 <div class="cardBody d-flex flex-wrap">                                
                 </div>
             </div>
