@@ -12,10 +12,6 @@
     <script src="./jquery.min.js"></script>
     <link href="./style.css" rel="stylesheet">
 
-
-    <script src="src/jquery.easing.min.js"></script>
-    <script src="src/bootstrap.bundle.min.js"></script>
-    <script src="src/js/admin.js"></script>
 </head>
 <body id="page-top">
     <!-- Page Wrapper -->
@@ -54,24 +50,6 @@
         </div>
         <!-- End of Content Wrapper -->
     </div>
-
 </body>
 <script src="./main.js"></script>
-<script>
-// npx lite-server
-// script for accordion headers
-var acc = document.getElementsByClassName("accordionRow");
-var i;
-for (i = 0; i < acc.length; i++) {
-    acc[i].addEventListener("click", function() {
-        this.classList.toggle("activeAcc");
-        var panel = this.nextElementSibling;
-        if (panel.style.display === "block") {
-            panel.style.display = "none";
-        } else {
-            panel.style.display = "block";
-        }
-    });
-}
-</script>
 </html>

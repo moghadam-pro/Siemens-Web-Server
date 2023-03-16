@@ -62,7 +62,7 @@ function createRecords(records,alphas){
                         <span class="motor_voltage" title="MOTOR VOLTAGE">${records[key].motorVoltag}</span>
                     </div>
                     <select class="cardSelect" name="mode" id="mode_A${item}B${records[key].beta}">
-                        <option value="0">Autopilot</option>
+                        <option value="0" selected="selected">Autopilot</option>
                         <option value="1">West Wash</option>
                         <option value="2">East Wash</option>
                         <option value="3">Storm</option>
@@ -75,52 +75,43 @@ function createRecords(records,alphas){
         }
     }
 }
-
-
-
-
-// let angle = "0";
-// let wind_velocity = "0";
-// let motor_voltage = "0";
-// const c_mode = ["Autopilot","West Wash","East Wash","Storm","Group Autopilot","Group West Wash","Group East Wash","Group Storm"];
-
-// function c_generator(angle,wind_velocity){
-//     let card_template = 
-//     '<div class="col-xl-2 col-md-2 mb-4"> <div class="card border-left-primary shadow h-100"> <div class="card-body no-gutters"> <div class="" style="display:flex;flex-direction:row;align-items:flex-start;gap:18px;"> <div class="" style="display: flex;flex-direction: column;align-items: flex-start;gap:12px;"> <div class=""> <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">PANEL ANGEL</div> <div class="h5 mb-0 font-weight-bold text-gray-800">'+angle+'</div> </div> <div class=""> <div class="text-xs font-weight-bold text-info text-uppercase mb-1">WIND VELOCITY</div> <div class="h5 mb-0 font-weight-bold text-gray-800">'+wind_velocity+'</div> </div> <div class=""> <div class="text-xs font-weight-bold text-info text-uppercase mb-1">MOTOR VOLTAGE</div> <div class="h5 mb-0 font-weight-bold text-gray-800">'+motor_voltage+'</div> </div> </div> <div class="" style="display: flex;flex-direction: column;align-items: flex-end;"> <div class="btn-group"> <button class="btn btn-white btn-sm dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">A </button> <div class="dropdown-menu" aria-labelledby="dropdownMenuButton"> <a class="dropdown-item active" href="#">Autopilot</a> <a class="dropdown-item" href="#">West Wash</a> <a class="dropdown-item" href="#">East Wash</a> <a class="dropdown-item" href="#">Storm</a> </div> </div> </div> </div> </div> </div> </div>';
-//     return card_template;
-// }
-
 function updateValue(xdata){
-    // test object and convert array to object for better addresing in fill boxs
-    
-
-    // $.each( xdata, function( key, value ) {
-        // console.log( key + ": " + value );
-        // $('#netA1_records').append(c_generator(key, value));
-    // });
+    console.log('verified all data in 1 second period')
 }
+$(document).ready(function () {
+    // $.ajaxSetup({ cache: false });
+    // setInterval(function () {
+    //     $.get("./IOread.htm", function (result) {
+    //         try {
+    //             const data = result.trim().split(/\r?\n/);
+    //             updateValue(data);
+    //         } catch (err) {
+    //             console.error(err);
+    //         }
+    //     });
+    // }, 1000);
 
-
-
-// $(document).ready(function () {
-//     $.ajaxSetup({ cache: false });
-//     //setInterval(function () {
-//         $.get("./IOread.htm", function (result) {
-//             try {
-//                 const data = result.trim().split(/\r?\n/);
-//                 updateValue(data);
-//             } catch (err) {
-//                 console.error(err);
-//             }
-//         });
-//     //}, 1000);
-//     $('.cardSelect').on('change', function () {
-//         selected = this.value;
-//         console.log(selected);
-//         url="./IOwrite.htm";
-//         name='"webdata".triangleWave';
-//         // val=$('input[id=setvar]').val();
-//         sdata=escape(name)+'='+selected;
-//         $.post(url,sdata,function(result){});
-//     });
-// });
+    // Send mode chanes to PLC
+    $('.cardSelect').change(function(){
+        console.log('Mode Changed');
+        const selected = 0;
+        const url="./IOwrite.htm";
+        const XalphaTitle='"InputData".alpha';
+        const XbetaTitle='"InputData".beta';
+        const XmodeTitle='"InputData".mode';
+        const XalphaValue = 0;
+        const XbetaValue = 0;
+        const sdata = XalphaTitle + '=' + XalphaValue + '\n' + XbetaTitle + '=' + XbetaValue + '\n' + XmodeTitle + '=' + selected;
+        console.log(sdata);
+        console.log('|| writed into : ' + url + ' || Mode : ' + selected + ' Alpha : ' + XalphaValue + ' & Beta : ' + XbetaValue + ' ||');
+        $.post(url,sdata,function(result){
+            console.log('|| writed into : ' + url + ' || Mode : ' + selected + ' Alpha : ' + XalphaValue + ' & Beta : ' + XbetaValue + ' ||');
+        });
+    })
+    // script for accordion headers
+    $('.accordionRow').click(function(){
+        $(this).addClass("displayBlock");
+        console.log('class added');
+    });
+});
+// npx lite-server
