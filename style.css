@@ -117,3 +117,7 @@ body{
     padding: 4px;
     gap: 12px;
 }
+.starter{
+    font-size: 12px;
+    padding: 24px 0 0 24px;
+}

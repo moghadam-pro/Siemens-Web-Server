@@ -40,7 +40,7 @@ function createDT(data){
 }
 // Generate Records
 function createRecords(records,alphas){
-    console.log(alphas[0].);
+    console.log(alphas[0]);
     const alphas2 = alphas.values();
     //console.log(alphas2);
     for (const [key, value] of Object.entries(records)) {
@@ -52,9 +52,9 @@ function createRecords(records,alphas){
         $('#contentWrap').append(`
         <div class="networkRow">
             <!-- Card Header - Accordion -->
-            <button class="accordionRow activeAcc" id="A${records[key].alpha}">Network Alpha #${records[key].alpha}</button>
+            <button class="accordionRow activeAcc" id="netA${records[key].alpha}">Network Alpha #${records[key].alpha}</button>
             <!-- Card Content - Collapse -->
-            <div class="panelAcc" style="display: block;"> 
+            <div class="panelAcc" id="netA${records[key].alpha}_records" style="display: block;"> 
                 <div class="cardBody d-flex flex-wrap">                                
                 </div>
             </div>
