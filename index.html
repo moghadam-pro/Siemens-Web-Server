@@ -16,15 +16,7 @@
     <script src="src/jquery.easing.min.js"></script>
     <script src="src/bootstrap.bundle.min.js"></script>
     <script src="src/js/admin.js"></script>
-
-    <script>
-
-    </script>
-    <style>
-        
-    </style>
 </head>
-
 <body id="page-top">
     <!-- Page Wrapper -->
     <div id="wrapper">
@@ -53,58 +45,10 @@
 
                 </nav>
                 <!-- End of Topbar -->
-                <div class="starter"><span>Detected: <span id="detectedAlpha">8</span> Alpha & <span id="detectedBeta">94</span> Beta</div>
-
-
-
                 <!-- Begin Page Content -->
                 <div id="contentWrap">
-                    
-                    <div class="networkRow">
-                        <!-- Card Header - Accordion -->
-                        <button class="accordionRow activeAcc" id="netA1">Network Alfa #1</button>
-                        <!-- Card Content - Collapse -->
-                        <div class="panelAcc" id="netA1_records" style="display: block;"> 
-                            <div class="cardBody d-flex flex-wrap">                                
-                                <div class="cardBox" id="A01B01">
-                                    <span class="cardID">A01B01</span>
-                                    <span class="cardStatus cs_normal"></span>
-                                    <div class="cardVal">
-                                        <span class="angle" title="PANEL ANGEL">45</span>
-                                        <span class="wind_velocity" title="WIND VELOCITY">0</span>
-                                        <span class="motor_voltage" title="MOTOR VOLTAGE">220</span>
-                                    </div>
-                                    <select class="cardSelect" name="mode">
-                                        <option value="0">Autopilot</option>
-                                        <option value="1">West Wash</option>
-                                        <option value="2">East Wash</option>
-                                        <option value="3">Storm</option>
-                                    </select>
-                                </div>
-                            </div>
-                        </div>
-
-                    </div>
-
-                    <div class="networkRow">
-                        <!-- Card Header - Accordion -->
-                        <button class="accordionRow activeAcc" id="netA2">Network Alfa #2</button>
-                        <!-- Card Content - Collapse -->
-                        <div class="panelAcc" id="netA2_records" style="display: block;"> 
-                            <div class="cardBody d-flex flex-wrap">                                
-
-                            </div>
-                        </div>
-
-                    </div>
-
                 </div>
-                
                 <!-- End of Page Content -->
-
-
-
-
             </div>
             <!-- End of Main Content -->
         </div>
@@ -113,4 +57,21 @@
 
 </body>
 <script src="./main.js"></script>
+<script>
+// npx lite-server
+// script for accordion headers
+var acc = document.getElementsByClassName("accordionRow");
+var i;
+for (i = 0; i < acc.length; i++) {
+    acc[i].addEventListener("click", function() {
+        this.classList.toggle("activeAcc");
+        var panel = this.nextElementSibling;
+        if (panel.style.display === "block") {
+            panel.style.display = "none";
+        } else {
+            panel.style.display = "block";
+        }
+    });
+}
+</script>
 </html>

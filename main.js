@@ -8,9 +8,10 @@ $.get("./IOread.htm", function (result) {
         console.error(err);
     }
 });
-// Convert Array to Object and Creat All Items
+// Convert Array to Object and Creat All Records
 function createDT(data){
     let records = {};
+    const alphas = new Set();
     let counter = 0;
     for (let key = 0 ; key < data.length ; key++){
         records[counter] = {
@@ -23,43 +24,55 @@ function createDT(data){
         };
         counter++;
     }
-    
-    const alphas = new Set();
+    // console.log(records);
     for (const key of Object.keys(records))
     {
         alphas.add(records[key].alpha);
     }
-    console.log(alphas);
     $('#detectedAlpha').html(alphas.size);
-    // console.log("alpha count: "+ alphas.size);
     $('#detectedBeta').html(Object.keys(records).length);
-    // console.log("beta count: "+ Object.keys(records).length);
-
-    //console.log(records);
+    // console.log(alphas);
     createRecords(records,alphas);
 }
-// Generate Records
+// Generate Records box
 function createRecords(records,alphas){
-    console.log(alphas[0]);
-    const alphas2 = alphas.values();
-    //console.log(alphas2);
-    for (const [key, value] of Object.entries(records)) {
-        //console.log(`${key}: ${value}`);
-    }
-    for (const key of alphas2){
-        //console.log(key);
-        //console.log(alphas2[key]);
+    for (const item of alphas){
         $('#contentWrap').append(`
         <div class="networkRow">
             <!-- Card Header - Accordion -->
-            <button class="accordionRow activeAcc" id="netA${records[key].alpha}">Network Alpha #${records[key].alpha}</button>
+            <button class="accordionRow activeAcc" id="netA${item}">Network Alpha #${item}</button>
             <!-- Card Content - Collapse -->
-            <div class="panelAcc" id="netA${records[key].alpha}_records" style="display: block;"> 
-                <div class="cardBody d-flex flex-wrap">                                
-                </div>
+            <div class="panelAcc" id="netA${item}_records" style="display: block;">   
+                <div class="cardBody d-flex flex-wrap"></div>                             
             </div>
         </div>
         `);
+    }
+    for (const item of alphas){
+        for (const key of Object.keys(records)){
+            if (records[key].alpha == item){
+                // console.log("alpha : " + item + " beta : " +  records[key].beta);
+                $('#netA' + item + '_records .cardBody').append(`                               
+                <div class="cardBox" id="A${item}B${records[key].beta}">
+                    <span class="cardID">A${item}B${records[key].beta}</span>
+                    <span class="cardStatus cs_normal" title="${records[key].status}"></span>
+                    <div class="cardVal">
+                        <span class="angle" title="PANEL ANGEL">${records[key].panelAngel}</span>
+                        <span class="wind_velocity" title="WIND VELOCITY">${records[key].windVelocity}</span>
+                        <span class="motor_voltage" title="MOTOR VOLTAGE">${records[key].motorVoltag}</span>
+                    </div>
+                    <select class="cardSelect" name="mode" id="mode_A${item}B${records[key].beta}">
+                        <option value="0">Autopilot</option>
+                        <option value="1">West Wash</option>
+                        <option value="2">East Wash</option>
+                        <option value="3">Storm</option>
+                    </select>
+                </div>
+                `);
+            }else{
+                continue;
+            }
+        }
     }
 }
 
@@ -111,21 +124,3 @@ function updateValue(xdata){
 //         $.post(url,sdata,function(result){});
 //     });
 // });
-
-
-
-// npx lite-server
-// script for accordion headers
-var acc = document.getElementsByClassName("accordionRow");
-var i;
-for (i = 0; i < acc.length; i++) {
-    acc[i].addEventListener("click", function() {
-        this.classList.toggle("activeAcc");
-        var panel = this.nextElementSibling;
-        if (panel.style.display === "block") {
-            panel.style.display = "none";
-        } else {
-            panel.style.display = "block";
-        }
-    });
-}
