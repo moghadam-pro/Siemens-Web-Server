@@ -79,21 +79,19 @@ function updateValue(xdata){
     console.log('verified all data in 1 second period')
 }
 $(document).ready(function () {
-    // $.ajaxSetup({ cache: false });
-    // setInterval(function () {
-    //     $.get("./IOread.htm", function (result) {
-    //         try {
-    //             const data = result.trim().split(/\r?\n/);
-    //             updateValue(data);
-    //         } catch (err) {
-    //             console.error(err);
-    //         }
-    //     });
-    // }, 1000);
-
+    $.ajaxSetup({ cache: false });
+    setInterval(function () {
+        $.get("./IOread.htm", function (result) {
+            try {
+                const data = result.trim().split(/\r?\n/);
+                updateValue(data);
+            } catch (err) {
+                console.error(err);
+            }
+        });
+    }, 1000);
     // Send mode chanes to PLC
-    $('.cardSelect').change(function(){
-        console.log('Mode Changed');
+    $(document,'.cardSelect').on('change',()=>{
         const selected = 0;
         const url="./IOwrite.htm";
         const XalphaTitle='"webData".alpha';
@@ -107,11 +105,10 @@ $(document).ready(function () {
         $.post(url,sdata,function(result){
             console.log('|| writed into : ' + url + ' || Mode : ' + selected + ' Alpha : ' + XalphaValue + ' & Beta : ' + XbetaValue + ' ||');
         });
-    })
+    });
     // script for accordion headers
-    $('.accordionRow').click(function(){
-        $(this).addClass("displayBlock");
-        console.log('class added');
+    $(document,'.accordionRow').on('click',()=>{
+        console.log('toggle header clicked');
     });
 });
 // npx lite-server
