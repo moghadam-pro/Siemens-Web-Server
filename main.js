@@ -96,7 +96,7 @@ $(document).ready(function () {
         console.log('Mode Changed');
         const selected = 0;
         const url="./IOwrite.htm";
-        const XalphaTitle='"InputData".alpha';
+        const XalphaTitle='"webData".alpha';
         const XbetaTitle='"InputData".beta';
         const XmodeTitle='"InputData".mode';
         const XalphaValue = 0;
