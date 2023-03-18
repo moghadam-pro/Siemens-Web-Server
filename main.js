@@ -90,18 +90,17 @@ $(document).ready(function () {
     }, 1000);
     // Send mode chanes to PLC
     $(document,'.cardSelect').on('change',()=>{
-        const selected = 0;
+        const selected = 00;
         const url="./IOwrite.htm";
-        const XalphaTitle='"webData".alfaNumber';
-        const XbetaTitle='"webData".betaNumber';
-        const XmodeTitle='"webData".operationMode';
-        const XalphaValue = 0;
-        const XbetaValue = 0;
-        const sdata = XalphaTitle + '=' + XalphaValue + '\n' + XbetaTitle + '=' + XbetaValue + '\n' + XmodeTitle + '=' + selected;
-        console.log(sdata);
-        // console.log('|| writed into : ' + url + ' || Mode : ' + selected + ' Alpha : ' + XalphaValue + ' & Beta : ' + XbetaValue + ' ||');
+        const XalphaTitle=':="webData".alfaNumber';
+        const XbetaTitle=':="webData".betaNumber';
+        const XmodeTitle=':="webData".operationMode';
+        const XalphaValue = 99;
+        const XbetaValue = 88;
+        const sdata = XalphaTitle + '=' + XalphaValue + ':\n' + XbetaTitle + '=' + XbetaValue + ':\n' + XmodeTitle + '=' + selected + ':';
         $.post(url,sdata,function(result){
-            console.log('|| writed into : ' + url + ' || Mode : ' + selected + ' Alpha : ' + XalphaValue + ' & Beta : ' + XbetaValue + ' ||');
+            console.log('|| writed into : ' + url);
+            console.log(sdata);
         });
     });
     // script for accordion headers
