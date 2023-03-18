@@ -107,6 +107,9 @@ body{
 .activeAcc, .accordionRow:hover {
     color: #45566f ; 
 }
+.transition, i:before, i:after {
+    transition: all 0.3s;
+}
 .panelAcc {
     padding: 12px;
     display: none;
@@ -116,6 +119,25 @@ body{
 .cardBody{
     padding: 4px;
     gap: 12px;
+}
+i {
+    position: absolute;
+    transform: translate(-6px, 0);
+    margin-top: 28px;
+    right: 15px;
+}
+i:before,i:after {
+    content: "";
+    position: absolute;
+    background-color: #cc071e;
+    width: 3px;
+    height: 9px;
+}
+i:before {
+    transform: translate(-2px, 0) rotate(45deg);
+}
+i:after {
+    transform: translate(2px, 0) rotate(-45deg);
 }
 .starter{
     font-size: 12px;

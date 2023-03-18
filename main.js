@@ -29,8 +29,6 @@ function createDT(data){
     {
         alphas.add(records[key].alpha);
     }
-    $('#detectedAlpha').html(alphas.size);
-    $('#detectedBeta').html(Object.keys(records).length);
     // console.log(alphas);
     createRecords(records,alphas);
 }
@@ -94,21 +92,21 @@ $(document).ready(function () {
     $(document,'.cardSelect').on('change',()=>{
         const selected = 0;
         const url="./IOwrite.htm";
-        const XalphaTitle='"webData".alpha';
-        const XbetaTitle='"InputData".beta';
-        const XmodeTitle='"InputData".mode';
+        const XalphaTitle='"webData".alfaNumber';
+        const XbetaTitle='"webData".betaNumber';
+        const XmodeTitle='"webData".operationMode';
         const XalphaValue = 0;
         const XbetaValue = 0;
         const sdata = XalphaTitle + '=' + XalphaValue + '\n' + XbetaTitle + '=' + XbetaValue + '\n' + XmodeTitle + '=' + selected;
         console.log(sdata);
-        console.log('|| writed into : ' + url + ' || Mode : ' + selected + ' Alpha : ' + XalphaValue + ' & Beta : ' + XbetaValue + ' ||');
+        // console.log('|| writed into : ' + url + ' || Mode : ' + selected + ' Alpha : ' + XalphaValue + ' & Beta : ' + XbetaValue + ' ||');
         $.post(url,sdata,function(result){
             console.log('|| writed into : ' + url + ' || Mode : ' + selected + ' Alpha : ' + XalphaValue + ' & Beta : ' + XbetaValue + ' ||');
         });
     });
     // script for accordion headers
-    $(document,'.accordionRow').on('click',()=>{
-        console.log('toggle header clicked');
-    });
+    // $(document,'.accordionRow').on('click',()=>{
+    //     console.log('toggle header clicked');
+    // });
 });
 // npx lite-server
