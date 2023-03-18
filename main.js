@@ -90,14 +90,19 @@ $(document).ready(function () {
     }, 1000);
     // Send mode chanes to PLC
     $(document,'.cardSelect').on('change',()=>{
-        const selected = 00;
+        var selectedVal = $(this).find(':selected').val();
+        var selectedText = $(this).find(':selected').text();
+        console.log(this.value);
+        console.log(selectedVal);
+        console.log(selectedText);
         const url="./IOwrite.htm";
-        const XalphaTitle=':="webData".alfaNumber';
-        const XbetaTitle=':="webData".betaNumber';
-        const XmodeTitle=':="webData".operationMode';
-        const XalphaValue = 99;
-        const XbetaValue = 88;
-        const sdata = XalphaTitle + '=' + XalphaValue + ':\n' + XbetaTitle + '=' + XbetaValue + ':\n' + XmodeTitle + '=' + selected + ':';
+        const XalphaTitle='"webData".alfaNumber';
+        const XbetaTitle='"webData".betaNumber';
+        const XmodeTitle='"webData".operationMode';
+        const XalphaValue = 22;
+        const XbetaValue = 33;
+        const sdata = XalphaTitle + '=' + XalphaValue + '\n' + XbetaTitle + '=' + XbetaValue + '\n' + XmodeTitle + '=' + selectedVal;
+        console.log(sdata);
         $.post(url,sdata,function(result){
             console.log('|| writed into : ' + url);
             console.log(sdata);
