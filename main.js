@@ -40,7 +40,7 @@ function createRecords(records,alphas){
             <!-- Card Header - Accordion -->
             <button class="accordionRow activeAcc" id="netA${item}">Network Alpha #${item}</button>
             <!-- Card Content - Collapse -->
-            <div class="panelAcc" id="netA${item}_records" style="display: block;">   
+            <div class="panelAcc" id="netA${item}_records">   
                 <div class="cardBody d-flex flex-wrap"></div>                             
             </div>
         </div>
@@ -59,7 +59,7 @@ function createRecords(records,alphas){
                         <span class="wind_velocity" title="WIND VELOCITY">${records[key].windVelocity}</span>
                         <span class="motor_voltage" title="MOTOR VOLTAGE">${records[key].motorVoltag}</span>
                     </div>
-                    <select class="cardSelect" name="mode" id="mode_A${item}B${records[key].beta}">
+                    <select class="cardSelect" name="mode" id="mode_A_${item}_B_${records[key].beta}">
                         <option value="0" selected="selected">Autopilot</option>
                         <option value="1">West Wash</option>
                         <option value="2">East Wash</option>
@@ -90,27 +90,28 @@ $(document).ready(function () {
     }, 1000);
     // Send mode chanes to PLC
     $(document,'.cardSelect').on('change',()=>{
-        var selectedVal = $(this).find(':selected').val();
-        var selectedText = $(this).find(':selected').text();
-        console.log(this.value);
-        console.log(selectedVal);
-        console.log(selectedText);
+        var selectedID = event.target.id;
+        const splits = selectedID.split("_");
+        var selectedVal = $("#" + selectedID).find(':selected').val();
+        var selectedText = $("#" + selectedID).find(':selected').text();
         const url="./IOwrite.htm";
         const XalphaTitle='"webData".alfaNumber';
         const XbetaTitle='"webData".betaNumber';
         const XmodeTitle='"webData".operationMode';
-        const XalphaValue = 22;
-        const XbetaValue = 33;
+        const XalphaValue = splits[2];
+        const XbetaValue = splits[4];
         const sdata = XalphaTitle + '=' + XalphaValue + '\n' + XbetaTitle + '=' + XbetaValue + '\n' + XmodeTitle + '=' + selectedVal;
         console.log(sdata);
         $.post(url,sdata,function(result){
             console.log('|| writed into : ' + url);
             console.log(sdata);
+            console.log("Seleced : " + selectedText);
         });
     });
     // script for accordion headers
-    // $(document,'.accordionRow').on('click',()=>{
-    //     console.log('toggle header clicked');
-    // });
+    $(document,'.accordionRow').on('click',()=>{
+        var tagID = event.target.id + "_records";
+        $("#" + tagID).toggle();
+    });
 });
 // npx lite-server

@@ -117,9 +117,10 @@ body{background-color: #e1e3e8;}
 }
 .panelAcc {
     padding: 12px;
-    display: none;
+    display: block;
     background-color: white;
     overflow: hidden;
+    transition: .2s ease-in-out;
 }
 .cardBody{
     padding: 4px;
