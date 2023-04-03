@@ -53,7 +53,7 @@ function createRecords(records,alphas){
                 $('#netA' + item + '_records .cardBody').append(`                               
                 <div class="cardBox" id="A${item}B${records[key].beta}">
                     <span class="cardID">A${item}B${records[key].beta}</span>
-                    <span class="cardStatus cs_normal" title="${records[key].status}"></span>
+                    <span class="cardStatus cs_${records[key].status}" title="${records[key].status}"></span>
                     <div class="cardVal">
                         <span class="angle" title="PANEL ANGEL">${records[key].panelAngel}</span>
                         <span class="wind_velocity" title="WIND VELOCITY">${records[key].windVelocity}</span>
@@ -73,8 +73,29 @@ function createRecords(records,alphas){
         }
     }
 }
-function updateValue(xdata){
-    console.log('verified all data in 1 second period')
+function updateValue(data){
+    let records = {};
+    let counter = 0;
+    for (let key = 0 ; key < data.length ; key++){
+        records[counter] = {
+            alpha: data[key],
+            beta: data[++key],
+            panelAngel: data[++key],
+            windVelocity: data[++key],
+            motorVoltag: data[++key],
+            status: data[++key]
+        };
+        counter++;
+    }
+    // console.log(records);
+    for (const xkey in records)
+    {
+        var selectedID = "A" + records[xkey].alpha + "B" + records[xkey].beta;
+        // $("#" + selectedID).find('.cardStatus').attr('title') = records[xkey].status;
+        $("#" + selectedID).find('.angle').html(records[xkey].panelAngel);
+        $("#" + selectedID).find('.wind_velocity').html(records[xkey].windVelocity);
+        $("#" + selectedID).find('.motor_voltage').html(records[xkey].motorVoltag);
+    }
 }
 $(document).ready(function () {
     $.ajaxSetup({ cache: false });
