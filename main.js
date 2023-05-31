@@ -1,13 +1,18 @@
 // First read data and generate data table
 $.ajaxSetup({ cache: false });
-$.get("./IOread.htm", function (result) {
-    try {
-        const data = result.trim().split(/\r?\n/);
-        createDT(data);
-    } catch (err) {
-        console.error(err);
-    }
-});
+// write here your count of files app should read alphas
+const fileCount = 3;
+//////
+for (let files = 0 ; files < fileCount ; files++){
+    $.get("./IOread-" + files + ".htm", function (result) {
+        try {
+            const data = result.trim().split(/\r?\n/);
+            createDT(data);
+        } catch (err) {
+            console.error(err);
+        }
+    });
+}
 // Convert Array to Object and Creat All Records
 function createDT(data){
     let records = {};
@@ -100,14 +105,16 @@ function updateValue(data){
 $(document).ready(function () {
     $.ajaxSetup({ cache: false });
     setInterval(function () {
-        $.get("./IOread.htm", function (result) {
-            try {
-                const data = result.trim().split(/\r?\n/);
-                updateValue(data);
-            } catch (err) {
-                console.error(err);
-            }
-        });
+        for (let files = 0 ; files < fileCount ; files++){
+            $.get("./IOread-" + files + ".htm", function (result) {
+                try {
+                    const data = result.trim().split(/\r?\n/);
+                    updateValue(data);
+                } catch (err) {
+                    console.error(err);
+                }
+            });
+        }
     }, 1000);
     // Send mode chanes to PLC
     $(document,'.cardSelect').on('change',()=>{
