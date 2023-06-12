@@ -323,13 +323,6 @@ li {
     display: list-item;
     text-align: -webkit-match-parent;
 }
-.navbar-nav {
-    display: flex;
-    flex-direction: column;
-    padding-left: 0;
-    margin-bottom: 0;
-    list-style: none;
-}
 .topbar.navbar-light .navbar-nav .nav-item .nav-link {
     color: #d1d3e2;
 }
@@ -370,4 +363,29 @@ li {
 
 .d-flex {
     display: flex !important;
+}
+
+/*   style from bootstrap for header */
+
+
+.navbar {
+    position: relative;
+    height: 4.375rem;
+    display: flex;
+    flex-wrap: wrap;
+    flex-flow: row nowrap;
+    justify-content: flex-start;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.5rem 1rem;
+    background-color: #fff!important;
+    margin-bottom: 1.5rem!important;
+    box-shadow: 0 .15rem 1.75rem 0 rgba(58,59,69,.15)!important;
+}
+.img-profile {
+    height: 2rem;
+    width: 2rem;
+    vertical-align: middle;
+    border-style: none;
+    border-radius: 50%!important;
 }
