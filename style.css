@@ -108,6 +108,7 @@ body{background-color: #e1e3e8;}
     outline: none;
     font-size: 12px;
     transition: 0.4s;
+    font-weight: bold;
 }
 .activeAcc, .accordionRow:hover {
     color: #45566f ; 
