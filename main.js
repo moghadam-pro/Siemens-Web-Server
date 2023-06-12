@@ -63,7 +63,7 @@ function createRecords(records,alphas){
                     <div class="cardVal">
                         <span class="angle" title="PANEL ANGEL">${records[key].panelAngel}</span>°
                         <span class="wind_velocity" title="WIND VELOCITY">${records[key].windVelocity}</span>km/h
-                        <span class="motor_voltage" title="MOTOR VOLTAGE">${records[key].motorVoltag}</span>
+                        
                     </div>
                     <select class="cardSelect" name="mode" id="mode_A_${item}_B_${records[key].beta}">
                         <option value="0" selected="selected">Autopilot</option>
@@ -100,7 +100,7 @@ function updateValue(data){
         // $("#" + selectedID).find('.cardStatus').attr('title') = records[xkey].status;
         $("#" + selectedID).find('.angle').html(records[xkey].panelAngel);
         $("#" + selectedID).find('.wind_velocity').html(records[xkey].windVelocity);
-        $("#" + selectedID).find('.motor_voltage').html(records[xkey].motorVoltag);
+        // $("#" + selectedID).find('.motor_voltage').html(records[xkey].motorVoltag);
     }
 }
 $(document).ready(function () {
