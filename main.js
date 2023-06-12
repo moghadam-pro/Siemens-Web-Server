@@ -12,6 +12,7 @@ for (let files = 0 ; files < fileCount ; files++){
             console.error(err);
         }
     });
+    setInterval(1000);
 }
 // Convert Array to Object and Creat All Records
 function createDT(data){
