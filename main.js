@@ -61,8 +61,8 @@ function createRecords(records,alphas){
                     <span class="cardID">A${item}B${records[key].beta}</span>
                     <span class="cardStatus cs_${records[key].status}" title="${records[key].status}"></span>
                     <div class="cardVal">
-                        <span class="angle" title="PANEL ANGEL">${records[key].panelAngel}</span>
-                        <span class="wind_velocity" title="WIND VELOCITY">${records[key].windVelocity}</span>
+                        <span class="angle afterStyle degreeSign" title="PANEL ANGEL">${records[key].panelAngel}</span>
+                        <span class="wind_velocity afterStyle kmhSign" title="WIND VELOCITY">${records[key].windVelocity}</span>
                         
                     </div>
                     <select class="cardSelect" name="mode" id="mode_A_${item}_B_${records[key].beta}">
