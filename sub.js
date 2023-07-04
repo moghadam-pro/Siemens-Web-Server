@@ -141,9 +141,21 @@ $(document).ready(function () {
 				{ label: "18:20",  y: 7200 }	
 			]
 		},
-		{
+        {
 			type: "stackedArea",
 			name: "Substation C",
+			showInLegend: true,
+			dataPoints: [
+				{ label: "18:00",  y: 2800 },
+				{ label: "18:05",  y: 2900 },
+				{ label: "18:10",  y: 2790 },
+				{ label: "18:15",  y: 3100 },	
+				{ label: "18:20",  y: 3500 }		
+			]
+		},
+		{
+			type: "stackedArea",
+			name: "Substation D",
 			showInLegend: true,
 			dataPoints: [
 				{ label: "18:00",  y: 1900 },
