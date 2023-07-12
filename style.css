@@ -25,7 +25,7 @@ body{background-color: #e1e3e8;}
     display: flex;
     flex-direction: row;
     align-items: flex-start;
-    gap: 18px;
+    gap: 45px;
     font-size: 1.5rem;
     color: #000;
 }
@@ -156,6 +156,13 @@ i:after {
     font-size: 12px;
     vertical-align: super;
 }
+.beforeStyle::before {
+    color: #c3c3c3;
+    font-size: 9px;
+    position: absolute;
+    top: 6px;
+
+}
 .degreeSign::after {
     content: "°";
 }
@@ -171,6 +178,13 @@ i:after {
 .threeSign::after {
     content: " three";
 }
+.windVelocity::before{
+    content: "WIND VELOCITY";
+}
+.panelAngle::before{
+    content: "PANEL ANGEL";
+}
+
 /* css from bootstrap */
 
 :root {
