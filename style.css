@@ -16,9 +16,9 @@ body{background-color: #e1e3e8;}
     position: absolute;
     right: 0;
     bottom: 0;
-    padding: 4px 8px;
-    font-size: 8px;
-    color: #888;
+    padding: 0px 10px;
+    font-size: 14px;
+    color: #000;
 }
 .cardVal{
     padding: 12px;
