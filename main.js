@@ -1,7 +1,7 @@
 // First read data and generate data table
 $.ajaxSetup({ cache: false });
 // write here your count of files app should read alphas
-const fileCount = 3;
+const fileCount = 2;
 //////
 for (let files = 0 ; files < fileCount ; files++){
     $.get("./IOread-" + files + ".htm", function (result) {
@@ -115,26 +115,28 @@ $(document).ready(function () {
                 }
             });
         }
-    }, 1000);
+    }, 8000);
     // Send mode chanes to PLC
+    // replaced by amin code
     $(document,'.cardSelect').on('change',()=>{
         var selectedID = event.target.id;
         const splits = selectedID.split("_");
         var selectedVal = $("#" + selectedID).find(':selected').val();
         var selectedText = $("#" + selectedID).find(':selected').text();
-        const url="./IOwrite.htm";
-        const XalphaTitle='"webData".alfaNumber';
-        const XbetaTitle='"webData".betaNumber';
-        const XmodeTitle='"webData".operationMode';
-        const XalphaValue = splits[2];
-        const XbetaValue = splits[4];
-        const sdata = XalphaTitle + '=' + XalphaValue + '\n' + XbetaTitle + '=' + XbetaValue + '\n' + XmodeTitle + '=' + selectedVal;
+        const url="IOwrite.htm";
+        XalphaTitle='"webData".alfaNumber';
+        XalphaValue = splits[2];
+        XbetaValue = splits[4];
+        myVal =  Number(selectedVal*10000)+Number(XalphaValue*100)+Number(XbetaValue);
+        sdata=escape(XalphaTitle)+'='+ myVal;
         console.log(sdata);
-        $.post(url,sdata,function(result){
-            console.log('|| writed into : ' + url);
-            console.log(sdata);
-            console.log("Seleced : " + selectedText);
-        });
+        for (let counts = 0 ; counts < 10 ; counts++){
+            $.post(url,sdata,function(result){
+                console.log('|| writed into : ' + url);
+                console.log(sdata);
+                console.log("Seleced : " + selectedText);
+            });
+        }
     });
     // script for accordion headers
     $(document,'.accordionRow').on('click',()=>{

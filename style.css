@@ -22,6 +22,8 @@ body{background-color: #e1e3e8;}
 }
 .cardVal{
     padding: 12px;
+    padding-right: 24px;
+    padding-top: 18px;
     display: flex;
     flex-direction: row;
     align-items: flex-start;
@@ -155,10 +157,11 @@ i:after {
     color: #c3c3c3;
     font-size: 12px;
     vertical-align: super;
+    margin-left: 8px;
 }
 .beforeStyle::before {
-    color: #c3c3c3;
-    font-size: 9px;
+    color: #787878;
+    font-size: 10px;
     position: absolute;
     top: 6px;
 
@@ -167,22 +170,30 @@ i:after {
     content: "°";
 }
 .kmhSign::after {
-    content: " km/h";
+    content: "km/h";
 }
-.oneSign::after {
-    content: " one";
+.lineCurrentSign::after {
+    content: "A";
 }
-.twoSign::after {
-    content: " two";
+
+.lineCurrentTitle::before{
+    content: "Line Current";
 }
-.threeSign::after {
-    content: " three";
+
+.lineVoltageSign::after {
+    content: "V";
 }
-.windVelocity::before{
-    content: "WIND VELOCITY";
+
+.lineVoltageTitle::before{
+    content: "Line Voltage";
 }
-.panelAngle::before{
-    content: "PANEL ANGEL";
+
+.apparentPowerSign::after {
+    content: "kVA";
+}
+
+.apparentPowerTitle::before{
+    content: "Apparent Power";
 }
 
 /* css from bootstrap */

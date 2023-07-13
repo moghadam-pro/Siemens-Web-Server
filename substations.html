@@ -40,7 +40,14 @@
                 <!-- End of Topbar -->
                 <!-- Begin Page Content -->
                 <div id="contentWrap">
-                    <div id="chartContainer" style="height: 300px;"></div>
+                    <div class="networkRow">
+                        <!-- Card Header - Accordion -->
+                        <button class="accordionRow activeAcc" id="netAA">Graph</button>
+                        <!-- Card Content - Collapse -->
+                        <div class="panelAcc" id="netAA_records" style="display: none;">   
+                            <div id="chartContainer" style="height: 420px;width: 100%;"></div>                           
+                        </div>
+                    </div>
                 </div>
                 <!-- End of Page Content -->
             </div>

@@ -52,9 +52,9 @@ function createRecords(records,alphas){
                 $('#netA' + item + '_records .cardBody').append(`                               
                 <div class="cardBox" id="A${item}B${records[key].beta}">
                     <div class="cardVal">
-                        <span class="angle afterStyle oneSign" title="PANEL ANGEL">${records[key].panelAngel}</span>
-                        <span class="wind_velocity afterStyle twoSign" title="WIND VELOCITY">${records[key].windVelocity}</span>
-                        <span class="motor_voltage afterStyle threeSign" title="MOTOR VOLTAGE">${records[key].motorVoltag}</span>
+                        <span class="angle afterStyle beforeStyle lineCurrentTitle lineCurrentSign" title="Line Current (A)">${records[key].panelAngel}</span>
+                        <span class="wind_velocity afterStyle beforeStyle lineVoltageSign lineVoltageTitle" title="Line Voltage (V)">${records[key].windVelocity}</span>
+                        <span class="motor_voltage afterStyle beforeStyle apparentPowerSign apparentPowerTitle" title="Apparent Power (kVA)">${records[key].motorVoltag}</span>
                     </div>
                 </div>
                 `);
@@ -71,9 +71,9 @@ function updateValue(data){
         records[counter] = {
             alpha: data[key],
             beta: data[++key],
-            panelAngel: data[++key],
-            windVelocity: data[++key],
-            motorVoltag: data[++key],
+            panelAngel: Math.round(data[++key]),
+            windVelocity: Math.round(data[++key]),
+            motorVoltag: Math.round(data[++key]),
             status: data[++key]
         };
         counter++;
