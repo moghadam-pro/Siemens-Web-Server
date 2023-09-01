@@ -114,7 +114,7 @@ function updateChart(newData){
     </tr>
     `);
     var trCount = $("#sub-line-chart tbody").children().length;
-    if(trCount>10){
+    if(trCount>288){
         $("#sub-line-chart tbody").find('tr:first').remove();
     }
 }
@@ -137,7 +137,7 @@ $(document).ready(function () {
                 console.error(err);
             }
         });
-    }, 5000);
+    }, 1000);
     // script for accordion headers
     $(document,'.accordionRow').on('click',()=>{
         var tagID = event.target.id + "_records";
