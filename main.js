@@ -65,10 +65,13 @@ function createRecords(records,alphas){
                         <span class="wind_velocity afterStyle" title="WIND VELOCITY">${records[key].windVelocity}</span>
                     </div>
                     <select class="cardSelect" name="mode" id="mode_A_${item}_B_${records[key].beta}">
-                        <option value="0" selected="selected">Autopilot</option>
-                        <option value="1">West Wash</option>
+                        <option value="0">Net Autopilot</option>
+                        <option value="1">Net East Storm</option>
+                        <option value="2">Net West Storm</option>
+                        <hr>
+                        <option value="1" selected="selected">Autopilot</option>
                         <option value="2">East Wash</option>
-                        <option value="3">Storm</option>
+                        <option value="3">West Wash</option>
                     </select>
                 </div>
                 `);
