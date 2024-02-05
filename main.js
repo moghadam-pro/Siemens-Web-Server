@@ -69,9 +69,9 @@ function createRecords(records,alphas){
                         <option value="1">Net East Storm</option>
                         <option value="2">Net West Storm</option>
                         <hr>
-                        <option value="1" selected="selected">Autopilot</option>
-                        <option value="2">East Wash</option>
-                        <option value="3">West Wash</option>
+                        <option value="3" selected="selected">Autopilot</option>
+                        <option value="4">East Wash</option>
+                        <option value="5">West Wash</option>
                     </select>
                 </div>
                 `);
