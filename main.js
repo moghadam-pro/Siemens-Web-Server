@@ -62,8 +62,9 @@ function createRecords(records,alphas){
                     <span class="cardID">A${item}B${records[key].beta}</span>
                     <span class="cardStatus cs_${records[key].status}" title="${records[key].status}"></span>
                     <div class="cardVal">
-                        <span class="angle afterStyle degreeSign " title="PANEL ANGEL">${records[key].panelAngel}</span>
-                        <span class="wind_velocity afterStyle" title="WIND VELOCITY">${records[key].windVelocity}</span>
+                        <span class="angle afterStyle degreeSign" title="Panel Angel">${records[key].panelAngel}</span>
+                        <span class="wind_velocity afterStyle kmhSign" title="Wind Velocity">${records[key].windVelocity}</span>
+                        <span class="wind_velocity afterStyle" title="Status">${records[key].motorVoltag}</span>
                     </div>
                     <select class="cardSelect" name="mode" id="mode_A_${item}_B_${records[key].beta}">
                         <option value="0">Net Autopilot</option>
@@ -82,8 +83,8 @@ function createRecords(records,alphas){
                     <span class="cardID">A${item}B${records[key].beta}</span>
                     <span class="cardStatus cs_${records[key].status}" title="${records[key].status}"></span>
                     <div class="cardVal">
-                        <span class="angle afterStyle degreeSign " title="PANEL ANGEL">${records[key].panelAngel}</span>
-                        <span class="wind_velocity afterStyle" title="WIND VELOCITY">${records[key].windVelocity}</span>
+                        <span class="angle afterStyle degreeSign" title="Panel Angel">${records[key].panelAngel}</span>
+                        <span class="wind_velocity afterStyle" title="Wind Velocity">${records[key].windVelocity}</span>
                     </div>
                     <select class="cardSelect" name="mode" id="mode_A_${item}_B_${records[key].beta}">
                         <option value="0">Net Autopilot</option>
