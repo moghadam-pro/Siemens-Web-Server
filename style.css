@@ -440,3 +440,12 @@ li {
     height: 200px;
     margin: 0;
   }
+/* custom card with blue bachground and beta zero */
+.zeroBeta,
+.zeroBeta .cardSelect{
+    background-color: #4e73df;
+    border-color: #6081e0;
+    color: #e8eeff;
+}
+.zeroBeta .cardID,
+.zeroBeta .cardVal{color: #fff;}

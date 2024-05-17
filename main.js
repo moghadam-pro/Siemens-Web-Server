@@ -55,7 +55,28 @@ function createRecords(records,alphas){
     for (const item of alphas){
         for (const key of Object.keys(records)){
             if (records[key].alpha == item){
+                if(records[key].beta == "0"){
                 // console.log("alpha : " + item + " beta : " +  records[key].beta);
+                $('#netA' + item + '_records .cardBody').append(`                               
+                <div class="cardBox zeroBeta" id="A${item}B${records[key].beta}">
+                    <span class="cardID">A${item}B${records[key].beta}</span>
+                    <span class="cardStatus cs_${records[key].status}" title="${records[key].status}"></span>
+                    <div class="cardVal">
+                        <span class="angle afterStyle degreeSign " title="PANEL ANGEL">${records[key].panelAngel}</span>
+                        <span class="wind_velocity afterStyle" title="WIND VELOCITY">${records[key].windVelocity}</span>
+                    </div>
+                    <select class="cardSelect" name="mode" id="mode_A_${item}_B_${records[key].beta}">
+                        <option value="0">Net Autopilot</option>
+                        <option value="1">Net East Storm</option>
+                        <option value="2">Net West Storm</option>
+                        <hr>
+                        <option value="3" selected="selected">Autopilot</option>
+                        <option value="4">East Wash</option>
+                        <option value="5">West Wash</option>
+                    </select>
+                </div>
+                `);
+            }else{
                 $('#netA' + item + '_records .cardBody').append(`                               
                 <div class="cardBox" id="A${item}B${records[key].beta}">
                     <span class="cardID">A${item}B${records[key].beta}</span>
@@ -75,6 +96,7 @@ function createRecords(records,alphas){
                     </select>
                 </div>
                 `);
+            }
             }else{
                 continue;
             }
