@@ -441,18 +441,13 @@ li {
     margin: 0;
   }
 /* custom card with blue bachground and beta zero */
-.zeroBeta{width: 372px;}
-.zeroBeta,
-.zeroBeta .cardSelect{
-    background-color: #4e73df;
-    border-color: #6081e0;
-    color: #e8eeff;
-}
-.zeroBeta .cardID,
-.zeroBeta .cardVal{color: #fff;}
-.zeroBeta .afterStyle::after {
-    color: #fff;
+.zeroBeta{
+    width: 372px;
+    border-left-color: #20c9a6 !important;
 }
 .zeroBeta .cardID{
     display: none;
+}
+.zeroBeta .wind_velocity::after{
+    vertical-align: middle;
 }

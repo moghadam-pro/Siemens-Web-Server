@@ -64,7 +64,7 @@ function createRecords(records,alphas){
                     <div class="cardVal">
                         <span class="angle afterStyle degreeSign" title="Panel Angel">${records[key].panelAngel}</span>
                         <span class="wind_velocity afterStyle kmhSign" title="Wind Velocity">${records[key].windVelocity}</span>
-                        <span class="wind_velocity afterStyle" title="Status">${records[key].motorVoltag}</span>
+                        <span class="motor_voltage afterStyle" title="Status">${records[key].motorVoltag}</span>
                     </div>
                     <select class="cardSelect" name="mode" id="mode_A_${item}_B_${records[key].beta}">
                         <option value="0">Net Autopilot</option>
@@ -122,7 +122,7 @@ function updateValue(data){
     for (const xkey in records)
     {
         var selectedID = "A" + records[xkey].alpha + "B" + records[xkey].beta;
-        // $("#" + selectedID).find('.cardStatus').attr('title') = records[xkey].status;
+        $("#" + selectedID).find('.cardStatus').attr('title') = records[xkey].status;
         $("#" + selectedID).find('.angle').html(records[xkey].panelAngel);
         $("#" + selectedID).find('.wind_velocity').html(records[xkey].windVelocity);
         // $("#" + selectedID).find('.motor_voltage').html(records[xkey].motorVoltag);
