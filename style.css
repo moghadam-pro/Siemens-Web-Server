@@ -108,7 +108,7 @@ body{background-color: #e1e3e8;}
     border: none;
     text-align: left;
     outline: none;
-    font-size: 12px;
+    font-size: 14px;
     transition: 0.4s;
     font-weight: bold;
 }
@@ -441,9 +441,11 @@ li {
     margin: 0;
   }
 /* custom card with blue bachground and beta zero */
-.zeroBeta{
+.zeroBeta {
     width: 372px;
+    border-color: #20c9a6;
     border-left-color: #20c9a6 !important;
+    background-color: #e9f8f5;
 }
 .zeroBeta .cardID{
     display: none;
