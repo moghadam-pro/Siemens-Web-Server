@@ -85,6 +85,7 @@ function createRecords(records,alphas){
                     <div class="cardVal">
                         <span class="angle afterStyle degreeSign" title="Panel Angel">${records[key].panelAngel}</span>
                         <span class="wind_velocity afterStyle" title="Wind Velocity">${records[key].windVelocity}</span>
+                        <span class="motor_voltage afterStyle" title="Status">${records[key].motorVoltag}</span>
                     </div>
                     <select class="cardSelect" name="mode" id="mode_A_${item}_B_${records[key].beta}">
                         <option value="0">Net Autopilot</option>

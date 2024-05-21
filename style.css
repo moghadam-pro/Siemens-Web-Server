@@ -90,7 +90,7 @@ body{background-color: #e1e3e8;}
     position: relative;
     display: flex;
     flex-direction: column;
-    min-width: 0;
+    min-width: 180px;
     word-wrap: break-word;
     background-color: #fff;
     background-clip: border-box;
@@ -164,8 +164,15 @@ i:after {
     font-size: 10px;
     position: absolute;
     top: 6px;
-
 }
+
+.unitV{
+    color: #515151;
+    font-size: 14px;
+    margin-left: 4px;
+    padding-top: 8px;
+}
+
 .degreeSign::after {
     content: "°";
 }
