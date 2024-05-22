@@ -52,9 +52,9 @@ function createRecords(records,alphas){
                 $('#netA' + item + '_records .cardBody').append(`                               
                 <div class="cardBox" id="A${item}B${records[key].beta}">
                     <div class="cardVal">
-                        <span class="angle" title="Line Current (A)">${records[key].panelAngel}</span><span class="unitV">A</span>
-                        <span class="wind_velocity" title="Line Voltage (V)">${records[key].windVelocity}</span><span class="unitV">V</span>
-                        <span class="motor_voltage" title="Apparent Power (kVA)">${records[key].motorVoltag}</span><span class="unitV">kVA</span>
+                        <span class="angle afterStyle beforeStyle lineCurrentTitle" title="Line Current (A)">${records[key].panelAngel}</span><span class="unitV">A</span>
+                        <span class="wind_velocity afterStyle beforeStyle  lineVoltageTitle" title="Line Voltage (V)">${records[key].windVelocity}</span><span class="unitV">V</span>
+                        <span class="motor_voltage afterStyle beforeStyle apparentPowerTitle" title="Apparent Power (kVA)">${records[key].motorVoltag}</span><span class="unitV">kVA</span>
                     </div>
                 </div>
                 `);
