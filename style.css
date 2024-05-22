@@ -27,7 +27,7 @@ body{background-color: #e1e3e8;}
     display: flex;
     flex-direction: row;
     align-items: flex-start;
-    gap: 16px;
+    gap: 8px;
     font-size: 1.5rem;
     color: #000;
 }
@@ -168,9 +168,9 @@ i:after {
 
 .unitV{
     color: #515151;
-    font-size: 14px;
-    margin-left: 4px;
-    padding-top: 8px;
+    font-size: 16px;
+    margin-right: 10px;
+    padding-top: 10px;
 }
 
 .degreeSign::after {
